@@ -25,6 +25,9 @@ async def detect(ctx, arg1):
 
     response = requests.post(url, data=json.dumps(payload), headers=headers)
 
-    await ctx.send('"' + arg1 + '"' + ' is most likely in ' + response.json()[0].get('language') + ' (confidence: ' + str(response.json()[0].get('confidence')) + ')')
+    if response.json()[0].get('confidence') == 0.0:
+        await ctx.send("Sorry, but I can't tell what language " + '"' + arg1 + '" is.')
+    else:
+        await ctx.send('"' + arg1 + '"' + ' is most likely in ' + response.json()[0].get('language') + ' (confidence: ' + str(response.json()[0].get('confidence')) + ')')
 
 bot.run('TOKEN HERE')
