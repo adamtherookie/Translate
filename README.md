@@ -4,15 +4,25 @@ A translation discord bot
 ## Invite
 Click this [link](https://discord.com/api/oauth2/authorize?client_id=885508498698424330&permissions=0&scope=bot) to invite the bot to your server.
 
-## Usage
+## Commands
 ```
+To translate text:
+------------------
 $translate "text" start_lang target_lang
+
+To detect the language of a text:
+---------------------------------
+$detect "text"
+
 ```
 
 ## Example
 ```
 $translate "hello" en es
 > Hola.
+
+$detect "hello"
+> hello is most likely in en (confidence: 85.0)
 ```
 
 ## Supported Languages
