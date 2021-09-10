@@ -22,7 +22,7 @@ $translate "hello" en es
 > Hola.
 
 $detect "hello"
-> hello is most likely in en (confidence: 85.0)
+> "hello" is most likely in en (confidence: 85.0)
 ```
 
 ## Supported Languages
