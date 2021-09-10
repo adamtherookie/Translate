@@ -17,4 +17,14 @@ async def translate(ctx, arg1, arg2, arg3):
 
     await ctx.send(response.json().get('translatedText'))
 
+@bot.command()
+async def detect(ctx, arg1):
+    url = 'https://libretranslate.de/detect'
+    payload = {'q': f"{arg1}"}
+    headers = {'Content-Type': 'application/json'}
+
+    response = requests.post(url, data=json.dumps(payload), headers=headers)
+
+    await ctx.send('"' + arg1 + '"' + ' is most likely in ' + response.json()[0].get('language') + ' (confidence: ' + str(response.json()[0].get('confidence')) + ')')
+
 bot.run('TOKEN HERE')
