@@ -17,8 +17,4 @@ async def translate(ctx, arg1, arg2, arg3):
 
     await ctx.send(response.json().get('translatedText'))
 
-@bot.command()
-async def who_sucks(ctx):
-    await ctx.send("cayden sucks")
-
-bot.run('ODg1NTA4NDk4Njk4NDI0MzMw.YToEDg.m3aJepyiS-UkHyvhYGUK2bjdGoo')
+bot.run('TOKEN HERE')
