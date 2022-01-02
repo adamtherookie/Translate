@@ -18,6 +18,10 @@ async def translate(ctx, arg1, arg2, arg3):
     await ctx.send(response.json().get('translatedText'))
 
 @bot.command()
+async def help(ctx):
+  await ctx.send("Translate Bot\n+ Commands:\n -> $translate <text> <start_lang> <end_lang> `Translate text from <start_lang> to <end_lang>`\n -> $detect <text> `Detects what language <text> is`\n -> $help `Displays this help message`")
+  
+@bot.command()
 async def detect(ctx, arg1):
     url = 'https://libretranslate.de/detect'
     payload = {'q': f"{arg1}"}
